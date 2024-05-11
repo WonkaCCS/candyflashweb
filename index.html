@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Candy Crush Custom Level!!</title>
+<script>
+window.getLevelCode = function() {
+console.log("GetLevelCode")
+return decodeURIComponent(location.search.split("levelCode=")[1].split("&")[0]).replaceAll("\"","&quot;")
+}
+
+setTimeout(function() {
+	document.getElementById("flash").getLevelCode(decodeURIComponent(location.search.split("levelCode=")[1].split("&")[0]))
+},2500)
+</script>
+</head>
+<body>
+<center><embed id="flash" src="ccgame_levelLoader.swf" type="application/x-shockwave-flash" width="755" height="600"></center>
+</body>
+</html>
