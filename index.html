@@ -2,19 +2,36 @@
 <html>
 <head>
 <title>Candy Crush Custom Level!!</title>
+<style>
+body {
+    background: repeating-linear-gradient(
+        45deg,
+        black,
+        black 10px,
+        yellow 10px,
+        yellow 20px
+    );
+    color: white;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+</style>
 <script>
 window.getLevelCode = function() {
-console.log("GetLevelCode")
-return decodeURIComponent(location.search.split("levelCode=")[1].split("&")[0]).replaceAll("\"","&quot;")
+    console.log("GetLevelCode")
+    return decodeURIComponent(location.search.split("levelCode=")[1].split("&")[0]).replaceAll("\"","&quot;")
 }
 
 setTimeout(function() {
-	document.getElementById("flash").getLevelCode(decodeURIComponent(location.search.split("levelCode=")[1].split("&")[0]))
-},2500)
-</script>
+    document.getElementById("flash").getLevelCode(decodeURIComponent(location.search.split("levelCode=")[1].split("&")[0]))
+}, 2500)
 </script>
 </head>
-<body style="background-color: black; color: white;">
+<body>
 <center><embed id="flash" src="ccgame_levelLoader.swf" type="application/x-shockwave-flash" width="755" height="600"></center>
 </body>
 </html>
