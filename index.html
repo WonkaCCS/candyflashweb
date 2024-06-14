@@ -2,10 +2,9 @@
 <html>
 <head>
 <title>Candy Crush Custom Level!!</title>
+<style id="backgroundStyle"></style>
 <style>
 body {
-    background: url('bg' + Math.floor(Math.random() * 22 + 1) + '.jpg') no-repeat center center fixed; 
-    background-size: cover;
     color: white;
     margin: 0;
     padding: 0;
@@ -26,6 +25,11 @@ body {
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
+    // Generate a random number between 1 and 22
+    var randomBgNumber = Math.floor(Math.random() * 22) + 1;
+    // Set the background image URL using the generated number
+    document.getElementById("backgroundStyle").textContent = 'body { background: url(\'bg' + randomBgNumber + '.jpg\') no-repeat center center fixed; background-size: cover; }';
+    
     window.getLevelCode = function() {
         console.log("GetLevelCode")
         return decodeURIComponent(location.search.split("levelCode=")[1].split("&")[0]).replaceAll("\"","&quot;")
