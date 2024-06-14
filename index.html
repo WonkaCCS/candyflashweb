@@ -4,28 +4,36 @@
 <title>Candy Crush Custom Level!!</title>
 <style>
 body {
-    background: repeating-linear-gradient(
-        45deg,
-        #ff9aa2, /* pastel pink */
-        #ff9aa2 15px,
-        #ffb7b2, /* pastel peach */
-        #ffb7b2 30px,
-        #ffdac1, /* pastel yellow */
-        #ffdac1 45px,
-        #e2f0cb, /* pastel green */
-        #e2f0cb 60px,
-        #b5ead7, /* pastel teal */
-        #b5ead7 75px,
-        #c7ceea, /* pastel purple */
-        #c7ceea 90px
-    );
+    background: url('bg.jpg') no-repeat center center fixed; 
+    background-size: cover;
     color: white;
     margin: 0;
     padding: 0;
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+#container {
+    position: relative;
+    width: 755px;
+    height: 600px;
+}
+#flash {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+#gradient {
+    position: absolute;
+    bottom: -20px; /* Adjust as needed to position the gradient */
+    left: 0;
+    width: 100%;
+    height: 50px; /* Adjust the height of the gradient as needed */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
 }
 </style>
 <script>
@@ -40,6 +48,9 @@ setTimeout(function() {
 </script>
 </head>
 <body>
-<center><embed id="flash" src="ccgame_levelLoader.swf" type="application/x-shockwave-flash" width="755" height="600"></center>
+<div id="container">
+    <embed id="flash" src="ccgame_levelLoader.swf" type="application/x-shockwave-flash"></embed>
+    <div id="gradient"></div>
+</div>
 </body>
 </html>
